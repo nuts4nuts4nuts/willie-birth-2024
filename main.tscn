@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://b84ipxpciaqiw"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_pwouh"]
+[ext_resource type="PackedScene" uid="uid://qys6aaa1pgmf" path="res://frog_1.tscn" id="2_yr1qc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b4ytn"]
+size = Vector3(2.4751, 0.500946, 2.00723)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4wojx"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_pwouh")
+frog_1_scene = ExtResource("2_yr1qc")
+
+[node name="frog_1" parent="." instance=ExtResource("2_yr1qc")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.757542, 0.652786, 0, -0.652786, 0.757542, 0.033226, 70.1224, 104.89)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.150146, -0.249527, -0.00657654)
+shape = SubResource("BoxShape3D_b4ytn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("PlaneMesh_4wojx")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.999997, -0.00244937, -0.000788954, 0.00129227, 0.212863, 0.977081, -0.00222529, -0.977079, 0.212866, 0, 65.4518, 44.9915)

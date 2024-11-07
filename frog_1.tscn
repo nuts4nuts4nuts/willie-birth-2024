@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://qys6aaa1pgmf"]
+
+[ext_resource type="ArrayMesh" uid="uid://itu1aoct4puh" path="res://models/13772_Frog_new.obj" id="1_6ny13"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_573sm"]
+size = Vector3(12.8389, 32.8545, 7.80908)
+
+[node name="RigidBody3D" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.0545494, 0.998511, 0, -0.998511, 0.0545494, 2.41246, 41.9742, -4.49154)
+gravity_scale = 5.469
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.9026, 0.43048, 0, -0.43048, 0.9026, -2.62613, 5.03305, 0.0923615)
+shape = SubResource("BoxShape3D_573sm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_6ny13")
